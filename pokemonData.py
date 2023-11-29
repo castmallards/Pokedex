@@ -12,31 +12,34 @@ generation = [1,2,3,4,5,6,7,8,9]
 filename = ['Generation1.csv', 'Generation2.csv', 'Generation3.csv', 'Generation4.csv', 'Generation5.csv', 'Generation6.csv',
              'Generation7.csv', 'Generation8.csv', 'Generation9.csv']
 
-#csv_writer = csv.writer(open(filename,'w'))
-
+new_filename = 'Moves.csv'
+csv_writer = csv.writer(open(new_filename,'w'))
+#csv.writer(open(new_filename, 'w'))
 # heading = soup.find('h1')
 # print(heading.text)
-
+header = True
 for gen in generation:
-    print(filename[gen-1])
+    # print(filename[gen-1])
 
-    csv_writer = csv.writer(open(filename[gen-1],'w'))
-    new_url = url + str(generation[gen-1])
+    # csv_writer = csv.writer(open(filename[gen-1],'w'))
+    new_url = url + str(gen)
     req =  requests.get(new_url)
     soup = BeautifulSoup(req.content, 'html5lib')
 
     for tr in soup.find_all('tr'):
         data = []
-
-        # Getting each header for the table
-        for th in tr.find_all('th'):
-            data.append(th.text)
-
-        # Add it to the csv file
-        if data:
-            print("Inserting headers to" +filename[gen-1] + " : {}".format(','.join(data)))
-            csv_writer.writerow(data)
-            continue
+        
+        if header:
+            # Getting each header for the table
+            for th in tr.find_all('th'):
+                data.append(th.text)
+            data.append('Gen')
+            header = False
+            # Add it to the csv file
+            if data:
+                print("Inserting headers to" + new_filename + " : {}".format(','.join(data)))
+                csv_writer.writerow(data)
+                continue
         
         for td in tr.find_all('td'):
             # Check what type of cell it is, if its an image of special, physical or status attack
@@ -60,5 +63,6 @@ for gen in generation:
                 data.append(modified_line)
 
         if data:
+            data.append(str(gen))
             csv_writer.writerow(data)
     print("File written to : " + filename[gen-1])
