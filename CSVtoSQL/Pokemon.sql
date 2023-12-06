@@ -1900,7 +1900,7 @@ INSERT INTO Pokemon(nat_id, pok_name, orig_game, evolves_from, hp, attack, defen
 INSERT INTO Pokemon(nat_id, pok_name, orig_game, evolves_from, hp, attack, defense) VALUES(666, 'vivillon', 'x', 665, 80, 52, 50);
 INSERT INTO Pokemon(nat_id, pok_name, orig_game, hp, attack, defense) VALUES(667, 'litleo', 'x', 62, 50, 58);
 INSERT INTO Pokemon(nat_id, pok_name, orig_game, evolves_from, hp, attack, defense) VALUES(668, 'pyroar', 'x', 667, 86, 68, 72);
-INSERT INTO Pokemon(nat_id, pok_name, orig_game, hp, attack, defense) VALUES(669, 'flab�b�', 'x', 44, 38, 39);
+INSERT INTO Pokemon(nat_id, pok_name, orig_game, hp, attack, defense) VALUES(669, 'flabebe', 'x', 44, 38, 39);
 INSERT INTO Pokemon(nat_id, pok_name, orig_game, evolves_from, hp, attack, defense) VALUES(670, 'floette', 'x', 669, 54, 45, 47);
 INSERT INTO Pokemon(nat_id, pok_name, orig_game, evolves_from, hp, attack, defense) VALUES(671, 'florges', 'x', 670, 78, 65, 68);
 INSERT INTO Pokemon(nat_id, pok_name, orig_game, hp, attack, defense) VALUES(672, 'skiddo', 'x', 66, 65, 48);

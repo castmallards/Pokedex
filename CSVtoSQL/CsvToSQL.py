@@ -186,12 +186,15 @@ def pokemonInserts(sqlFileName, csvFileName):
                 if(row and row[4] == 'NULL' and row[1] not in natIDList): 
                     nat_id = row[1]
                     natIDList.append(nat_id) #append to list if found
+                    
                     #clean up quotes
                     pok_name = re.sub('"', "", row[2])
                     pok_name = re.sub("'", "''", pok_name)
+                    pok_name = re.sub("Ã©", "e", pok_name) #one special case char
                     pok_name = "'" + pok_name + "'" #add quotes for ease
                     orig_game = re.sub('"', "", row[22])
                     
+
                     if(orig_game.lower() in gameList):
                         orig_game = "'" + orig_game + "'" #add quotes for ease
                         evolvesFrom = getNatIDFromLocalID(row[43], csvFileName)
