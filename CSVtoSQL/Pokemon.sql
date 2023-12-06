@@ -2034,13 +2034,6 @@ INSERT INTO Pokemon(nat_id, pok_name, orig_game, hp, attack, defense) VALUES(799
 INSERT INTO Pokemon(nat_id, pok_name, orig_game, hp, attack, defense) VALUES(800, 'necrozma', 'sun', 97, 107, 101);
 INSERT INTO Pokemon(nat_id, pok_name, orig_game, hp, attack, defense) VALUES(801, 'magearna', 'sun', 80, 95, 115);
 INSERT INTO Pokemon(nat_id, pok_name, orig_game, hp, attack, defense) VALUES(802, 'marshadow', 'sun', 90, 125, 80);
-INSERT INTO Pokemon(nat_id, pok_name, orig_game, hp, attack, defense) VALUES(803, 'poipole', 'ultra sun', 67, 73, 67);
-INSERT INTO Pokemon(nat_id, pok_name, orig_game, evolves_from, hp, attack, defense) VALUES(804, 'naganadel', 'ultra sun', 803, 73, 73, 73);
-INSERT INTO Pokemon(nat_id, pok_name, orig_game, hp, attack, defense) VALUES(805, 'stakataka', 'ultra sun', 61, 131, 211);
-INSERT INTO Pokemon(nat_id, pok_name, orig_game, hp, attack, defense) VALUES(806, 'blacephalon', 'ultra sun', 53, 127, 53);
-INSERT INTO Pokemon(nat_id, pok_name, orig_game, hp, attack, defense) VALUES(807, 'zeraora', 'ultra sun', 88, 112, 75);
-INSERT INTO Pokemon(nat_id, pok_name, orig_game, hp, attack, defense) VALUES(808, 'meltan', 'pok�mon go', 46, 65, 65);
-INSERT INTO Pokemon(nat_id, pok_name, orig_game, evolves_from, hp, attack, defense) VALUES(809, 'melmetal', 'pok�mon go', 808, 135, 143, 143);
 INSERT INTO Pokemon(nat_id, pok_name, orig_game, hp, attack, defense) VALUES(810, 'grookey', 'sword', 50, 65, 50);
 INSERT INTO Pokemon(nat_id, pok_name, orig_game, evolves_from, hp, attack, defense) VALUES(811, 'thwackey', 'sword', 810, 70, 85, 70);
 INSERT INTO Pokemon(nat_id, pok_name, orig_game, evolves_from, hp, attack, defense) VALUES(812, 'rillaboom', 'sword', 811, 100, 125, 90);
@@ -2130,13 +2123,6 @@ INSERT INTO Pokemon(nat_id, pok_name, orig_game, hp, attack, defense) VALUES(895
 INSERT INTO Pokemon(nat_id, pok_name, orig_game, hp, attack, defense) VALUES(896, 'glastrier', 'sword', 100, 145, 130);
 INSERT INTO Pokemon(nat_id, pok_name, orig_game, hp, attack, defense) VALUES(897, 'spectrier', 'sword', 100, 65, 60);
 INSERT INTO Pokemon(nat_id, pok_name, orig_game, hp, attack, defense) VALUES(898, 'calyrex', 'sword', 100, 80, 80);
-INSERT INTO Pokemon(nat_id, pok_name, orig_game, evolves_from, hp, attack, defense) VALUES(899, 'wyrdeer', 'legends: arceus', 234, 103, 105, 72);
-INSERT INTO Pokemon(nat_id, pok_name, orig_game, evolves_from, hp, attack, defense) VALUES(900, 'kleavor', 'legends: arceus', 123, 70, 130, 95);
-INSERT INTO Pokemon(nat_id, pok_name, orig_game, evolves_from, hp, attack, defense) VALUES(901, 'ursaluna', 'legends: arceus', 217, 130, 140, 105);
-INSERT INTO Pokemon(nat_id, pok_name, orig_game, evolves_from, hp, attack, defense) VALUES(902, 'basculegion', 'legends: arceus', 550, 120, 112, 65);
-INSERT INTO Pokemon(nat_id, pok_name, orig_game, evolves_from, hp, attack, defense) VALUES(903, 'sneasler', 'legends: arceus', 215, 80, 130, 60);
-INSERT INTO Pokemon(nat_id, pok_name, orig_game, evolves_from, hp, attack, defense) VALUES(904, 'overqwil', 'legends: arceus', 211, 85, 115, 95);
-INSERT INTO Pokemon(nat_id, pok_name, orig_game, hp, attack, defense) VALUES(905, 'enamorus', 'legends: arceus', 74, 115, 70);
 INSERT INTO Pokemon(nat_id, pok_name, orig_game, hp, attack, defense) VALUES(906, 'sprigatito', 'scarlet', 40, 61, 54);
 INSERT INTO Pokemon(nat_id, pok_name, orig_game, evolves_from, hp, attack, defense) VALUES(907, 'floragato', 'scarlet', 906, 61, 80, 63);
 INSERT INTO Pokemon(nat_id, pok_name, orig_game, evolves_from, hp, attack, defense) VALUES(908, 'meowscarada', 'scarlet', 907, 76, 110, 70);
