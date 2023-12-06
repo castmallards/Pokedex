@@ -2,6 +2,7 @@
 #tables (product), clean up current tables (our tables), make create statements for
 #new tables (our tables) and create insert statements for said tables.
 
+import os
 import csv
 import re
 ###########################################################################################################################################
@@ -195,7 +196,8 @@ def pokemonInserts(sqlFileName, csvFileName):
                     attack = row[24]
                     defense = row[25]
                     
-                    if(evolvesFrom):
+                    #this filter removes baby pokemon evolutions
+                    if(evolvesFrom and int(evolvesFrom) < int(nat_id)):
                         sqlWriter.write("INSERT INTO Pokemon(nat_id, pok_name, orig_game, evolves_from, hp, attack, defense) VALUES(" + nat_id + ", " + pok_name.lower() + ", " + orig_game.lower() + ", " + evolvesFrom + ", " + hp + ", " + attack + ", " + defense + ");\n")
                     else:
                         sqlWriter.write("INSERT INTO Pokemon(nat_id, pok_name, orig_game, hp, attack, defense) VALUES(" + nat_id + ", " + pok_name.lower() + ", " + orig_game.lower() + ", " + hp + ", " + attack + ", " + defense + ");\n")
@@ -353,6 +355,10 @@ def rosterInserts(sqlFileName, csvFileName, pokemonCSV):
                      
 
 def init():
+    path = os.path.realpath(__file__)
+    dir = os.path.dirname(path)
+    os.chdir(dir)
+
     sqlFileName = 'Pokemon.sql'
     pokemonCSV = 'Pokemon Database.csv'
     gamesCSV = 'AllGames.csv'
