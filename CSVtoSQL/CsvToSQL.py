@@ -179,6 +179,7 @@ def pokemonInserts(sqlFileName, csvFileName):
             #Keep list of pokemon inserted to filter duplicates. 
             #Duplicate entries are outside the scope of the model.
             natIDList = [] 
+            gameList = ['red', 'blue', 'yellow', 'gold', 'silver', 'crystal', 'ruby', 'sapphire', 'emerald', 'diamond', 'pearl', 'platinum', 'black', 'white', 'x', 'y', 'sun', 'moon', 'sword', 'shield', 'scarlet', 'violet']
             for row in csvReader:
                 #row[4] helps filter special case pokemon (same as above)
                 #filter duplicates and special cases
@@ -190,17 +191,19 @@ def pokemonInserts(sqlFileName, csvFileName):
                     pok_name = re.sub("'", "''", pok_name)
                     pok_name = "'" + pok_name + "'" #add quotes for ease
                     orig_game = re.sub('"', "", row[22])
-                    orig_game = "'" + orig_game + "'" #add quotes for ease
-                    evolvesFrom = getNatIDFromLocalID(row[43], csvFileName)
-                    hp = row[23]
-                    attack = row[24]
-                    defense = row[25]
                     
-                    #this filter removes baby pokemon evolutions
-                    if(evolvesFrom and int(evolvesFrom) < int(nat_id)):
-                        sqlWriter.write("INSERT INTO Pokemon(nat_id, pok_name, orig_game, evolves_from, hp, attack, defense) VALUES(" + nat_id + ", " + pok_name.lower() + ", " + orig_game.lower() + ", " + evolvesFrom + ", " + hp + ", " + attack + ", " + defense + ");\n")
-                    else:
-                        sqlWriter.write("INSERT INTO Pokemon(nat_id, pok_name, orig_game, hp, attack, defense) VALUES(" + nat_id + ", " + pok_name.lower() + ", " + orig_game.lower() + ", " + hp + ", " + attack + ", " + defense + ");\n")
+                    if(orig_game.lower() in gameList):
+                        orig_game = "'" + orig_game + "'" #add quotes for ease
+                        evolvesFrom = getNatIDFromLocalID(row[43], csvFileName)
+                        hp = row[23]
+                        attack = row[24]
+                        defense = row[25]
+                    
+                        #this filter removes baby pokemon evolutions
+                        if(evolvesFrom and int(evolvesFrom) < int(nat_id)):
+                            sqlWriter.write("INSERT INTO Pokemon(nat_id, pok_name, orig_game, evolves_from, hp, attack, defense) VALUES(" + nat_id + ", " + pok_name.lower() + ", " + orig_game.lower() + ", " + evolvesFrom + ", " + hp + ", " + attack + ", " + defense + ");\n")
+                        else:
+                            sqlWriter.write("INSERT INTO Pokemon(nat_id, pok_name, orig_game, hp, attack, defense) VALUES(" + nat_id + ", " + pok_name.lower() + ", " + orig_game.lower() + ", " + hp + ", " + attack + ", " + defense + ");\n")
             sqlWriter.write("\n")
             csvFile.close()
             sqlWriter.close()
