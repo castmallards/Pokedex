@@ -1,0 +1,45 @@
+{% extends "pageTemplate.html" %}
+
+{% block content %}
+
+<h1>New Pokemon by Type</h1>
+<p>This displays how many Pokemon were introduced in a Game by type</p>
+<form method="GET" action="#">
+    <label>Games</label>
+    <select id="Games" name="Games" class="form-control">
+        <option value="All">All</option>
+        {% for game in Game}
+        <option value="{{game[0]}}">{{game[0]}}</option>
+        {% endfor %}
+    </select>
+</form>
+
+<table id="Type" class="table table-hover">
+    <thead>
+        <th scope="col">Type Name</th>
+        <th scope="col">Num Pokemon</th>
+    </thead>
+    <tbody style="overflow: auto;">
+        {% for typ in Type%}
+        <tr>
+            <td>{{typ[0]}}</td>
+            <td>{{typ[1]}}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    $(document).ready(function () {
+        $('#Type').DataTable({
+            columns: [
+                { data: 'Type', searchable: true },
+                { data: 'Num Pokemon', searchable: false }
+            ],
+        });
+    });
+</script>
+
+{% endblock %}

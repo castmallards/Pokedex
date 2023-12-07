@@ -2,6 +2,51 @@
 
 {% block content %}
 
-<h1>I am a Pokemon</h1>
+<h1>This is a list of Pokemon</h1>
+
+<table id="Pokemon" class="table table-hover">
+    <thead>
+        <th scope="col">National ID</th>
+        <th scope="col">Name</th>
+        <th scope="col">Origin Game</th>
+        <th scope="col">Evolves From</th>
+        <th scope="col">HP</th>
+        <th scope="col">Attack</th>
+        <th scope="col">Defence</th>
+    </thead>
+    <tbody style="overflow: auto;">
+        {% for pok in Pokemon%}
+        <tr>
+            <td>{{pok[0]}}</td>
+            <td>{{pok[1]}}</td>
+            <td>{{pok[2]}}</td>
+            <td>{{pok[3]}}</td>
+            <td>{{pok[4]}}</td>
+            <td>{{pok[5]}}</td>
+            <td>{{pok[6]}}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+{% endblock %}
+
+
+{% block scripts %}
+<script>
+    $(document).ready(function () {
+        $('#Pokemon').DataTable({
+            columns: [
+                { data: 'National ID', searchable: true },
+                { data: 'Name', searchable: true },
+                { data: 'Origin Game' },
+                { data: 'Evoloves From' },
+                { data: 'HP' },
+                { data: "Attack" },
+                { data: "Defence" }
+            ],
+        });
+    });
+</script>
 
 {% endblock %}
