@@ -6,7 +6,7 @@ Normal,Electric,1
 Normal,Grass,1
 Normal,Ice,1
 Normal,Fighting,1
-Normal,Posion,1
+Normal,Poison,1
 Normal,Ground,1
 Normal,Flying,1
 Normal,Psychic,1
@@ -24,7 +24,7 @@ Fire,Electric,1
 Fire,Grass,2
 Fire,Ice,2
 Fire,Fighting,1
-Fire,Posion,1
+Fire,Poison,1
 Fire,Ground,1
 Fire,Flying,1
 Fire,Psychic,1
@@ -42,7 +42,7 @@ Water,Electric,1
 Water,Grass,0.5
 Water,Ice,1
 Water,Fighting,1
-Water,Posion,1
+Water,Poison,1
 Water,Ground,2
 Water,Flying,1
 Water,Psychic,1
@@ -60,7 +60,7 @@ Electric,Electric,0.5
 Electric,Grass,0.5
 Electric,Ice,1
 Electric,Fighting,1
-Electric,Posion,1
+Electric,Poison,1
 Electric,Ground,0
 Electric,Flying,2
 Electric,Psychic,1
@@ -78,7 +78,7 @@ Grass,Electric,1
 Grass,Grass,0.5
 Grass,Ice,1
 Grass,Fighting,1
-Grass,Posion,0.5
+Grass,Poison,0.5
 Grass,Ground,2
 Grass,Flying,0.5
 Grass,Psychic,1
@@ -96,7 +96,7 @@ Ice,Electric,1
 Ice,Grass,2
 Ice,Ice,0.5
 Ice,Fighting,1
-Ice,Posion,1
+Ice,Poison,1
 Ice,Ground,2
 Ice,Flying,2
 Ice,Psychic,1
@@ -114,7 +114,7 @@ Fighting,Electric,1
 Fighting,Grass,1
 Fighting,Ice,2
 Fighting,Fighting,1
-Fighting,Posion,0.5
+Fighting,Poison,0.5
 Fighting,Ground,1
 Fighting,Flying,0.5
 Fighting,Psychic,0.5
@@ -132,7 +132,7 @@ Poison,Electric,1
 Poison,Grass,2
 Poison,Ice,1
 Poison,Fighting,1
-Poison,Posion,0.5
+Poison,Poison,0.5
 Poison,Ground,0.5
 Poison,Flying,1
 Poison,Psychic,1
@@ -150,7 +150,7 @@ Ground,Electric,2
 Ground,Grass,0.5
 Ground,Ice,1
 Ground,Fighting,1
-Ground,Posion,2
+Ground,Poison,2
 Ground,Ground,1
 Ground,Flying,0
 Ground,Psychic,1
@@ -168,7 +168,7 @@ Flying,Electric,0.5
 Flying,Grass,2
 Flying,Ice,1
 Flying,Fighting,2
-Flying,Posion,1
+Flying,Poison,1
 Flying,Ground,1
 Flying,Flying,1
 Flying,Psychic,1
@@ -186,7 +186,7 @@ Psychic,Electric,1
 Psychic,Grass,1
 Psychic,Ice,1
 Psychic,Fighting,2
-Psychic,Posion,2
+Psychic,Poison,2
 Psychic,Ground,1
 Psychic,Flying,1
 Psychic,Psychic,0.5
@@ -204,7 +204,7 @@ Bug,Electric,1
 Bug,Grass,2
 Bug,Ice,1
 Bug,Fighting,0.5
-Bug,Posion,0.5
+Bug,Poison,0.5
 Bug,Ground,1
 Bug,Flying,0.5
 Bug,Psychic,2
@@ -222,7 +222,7 @@ Rock,Electric,1
 Rock,Grass,1
 Rock,Ice,2
 Rock,Fighting,0.5
-Rock,Posion,1
+Rock,Poison,1
 Rock,Ground,0.5
 Rock,Flying,2
 Rock,Psychic,1
@@ -240,7 +240,7 @@ Ghost,Electric,1
 Ghost,Grass,1
 Ghost,Ice,1
 Ghost,Fighting,1
-Ghost,Posion,1
+Ghost,Poison,1
 Ghost,Ground,1
 Ghost,Flying,1
 Ghost,Psychic,2
@@ -258,7 +258,7 @@ Dragon,Electric,1
 Dragon,Grass,1
 Dragon,Ice,1
 Dragon,Fighting,1
-Dragon,Posion,1
+Dragon,Poison,1
 Dragon,Ground,1
 Dragon,Flying,1
 Dragon,Psychic,1
@@ -276,7 +276,7 @@ Dark,Electric,1
 Dark,Grass,1
 Dark,Ice,1
 Dark,Fighting,0.5
-Dark,Posion,1
+Dark,Poison,1
 Dark,Ground,1
 Dark,Flying,1
 Dark,Psychic,2
@@ -294,7 +294,7 @@ Steel,Electric,0.5
 Steel,Grass,1
 Steel,Ice,2
 Steel,Fighting,1
-Steel,Posion,1
+Steel,Poison,1
 Steel,Ground,1
 Steel,Flying,1
 Steel,Psychic,1
@@ -312,7 +312,7 @@ Fairy,Electric,1
 Fairy,Grass,1
 Fairy,Ice,1
 Fairy,Fighting,2
-Fairy,Posion,0.5
+Fairy,Poison,0.5
 Fairy,Ground,1
 Fairy,Flying,1
 Fairy,Psychic,1

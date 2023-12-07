@@ -18,6 +18,7 @@ def create_connection(db_filename):
         :param db_filename: Database file name
         :return: Returns the conenection to database or None
     '''
+    
     try:
         username = input("Enter your username\n")
         password = getpass.getpass("Enter password\n")
@@ -26,7 +27,20 @@ def create_connection(db_filename):
     conn = pymssql.connect('uranium.cs.umanitoba.ca',username, password, 'cs3380')
     conn.autocommit(True)
     cursor = conn.cursor()
-    
+
+    # This code changes the current path to the path of sql file
+    path = os.path.realpath(__file__)
+    dir = os.path.dirname(path)
+    dir = dir.replace('Blueprints', 'CSVtoSQL')
+    os.chdir(dir)
+    sql_file = open('Pokemon.sql', 'r')
+    file_content = sql_file.read()
+    sql_file.close()
+    # We change the path back
+    dir = dir.replace('CSVtoSQL', 'Blueprints')
+    os.chdir(dir)
+
+    cursor.execute(file_content)
     '''
         1) IF EXISTS, DROP ALL TABLES
         2) CREATE THE TABLES
@@ -42,12 +56,9 @@ def create_connection(db_filename):
     # for row in rows:
     #     print(row)
     
-    try:
-        conn = ""
-    except Error as e:
-        print(e)
+    
 
-    return None
+    return conn
 
 conn = create_connection("hello.txt")
 
