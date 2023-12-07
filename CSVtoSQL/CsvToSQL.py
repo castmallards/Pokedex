@@ -2,6 +2,8 @@
 #tables (product), clean up current tables (our tables), make create statements for
 #new tables (our tables) and create insert statements for said tables.
 
+#testest
+
 import os
 import csv
 import re
