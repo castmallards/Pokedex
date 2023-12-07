@@ -27,21 +27,25 @@ def pokemon_page():
 def moves_page():
     return render_template("moves.html")
 
-@views.route('/newPkmnIntro', methods=["GET"])
+@views.route('/newPkmnIntro', methods=["POST"])
 def newPkmnIntro_page():
-
-    if request.method == "GET":
+    query = ""
+    if request.method == "POST":
         game = request.form['Games']
-
-    games_list = ''
-    types = ''
+        if game == 'None':
+            query = ""
+        else: # Check for SQL injection 
+            query =  game
+    else:
+        query = ""
     curr = conn.cursor()
-    curr.execute('SELECT ')
+    curr.execute('SELECT game_name FROM Games')
+    game_list = curr.fetchall()
 
-    return render_template('newPkmnIntro.html', Games=games_list, Type=types)
+    return render_template('newPkmnIntro.html', Games=game_list)
 
 @views.route('/newPkmnIntro/<game_name>', methods=["GET"])
-def newPkmnIntro_page():
+def newPkmnInfoResult_page():
 
     if request.method == "GET":
         game = request.form['Games']
@@ -50,5 +54,7 @@ def newPkmnIntro_page():
     types = ''
     curr = conn.cursor()
     curr.execute('SELECT ')
+    #types = 'SELECT Has_Type.type_name, count(*) as numIntroduced FROM Has_Type LEFT JOIN Pokemon ON Pokemon.nat_id = Has_Type.nat_id WHERE Pokemon.orig_game = \'{}\' GROUP BY Has_Type.type_name ORDER BY numIntroduced DESC;'.format(query)
+    
 
-    return render_template('newPkmnIntro_info.html', Games=games_list, Type=types)
+    return render_template('newPkmnIntro_result.html', Type=types)

@@ -1,0 +1,19 @@
+{% extends "pageTemplate.html" %}
+
+{% block content %}
+
+<table id="Type" class="table table-hover">
+    <thead>
+        <th scope="col">Type Name</th>
+        <th scope="col">Num Pokemon</th>
+    </thead>
+    <tbody style="overflow: auto;">
+        {% for typ in Type%}
+        <tr>
+            <td>{{typ[0]}}</td>
+            <td>{{typ[1]}}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
