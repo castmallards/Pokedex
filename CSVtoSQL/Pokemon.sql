@@ -6090,7 +6090,7 @@ INSERT INTO Effect(affecting_type, affected_type, effect_level) VALUES('normal',
 INSERT INTO Effect(affecting_type, affected_type, effect_level) VALUES('normal', 'grass', 1);
 INSERT INTO Effect(affecting_type, affected_type, effect_level) VALUES('normal', 'ice', 1);
 INSERT INTO Effect(affecting_type, affected_type, effect_level) VALUES('normal', 'fighting', 1);
-INSERT INTO Effect(affecting_type, affected_type, effect_level) VALUES('normal', 'posion', 1);
+INSERT INTO Effect(affecting_type, affected_type, effect_level) VALUES('normal', 'poison', 1);
 INSERT INTO Effect(affecting_type, affected_type, effect_level) VALUES('normal', 'ground', 1);
 INSERT INTO Effect(affecting_type, affected_type, effect_level) VALUES('normal', 'flying', 1);
 INSERT INTO Effect(affecting_type, affected_type, effect_level) VALUES('normal', 'psychic', 1);
@@ -6108,7 +6108,7 @@ INSERT INTO Effect(affecting_type, affected_type, effect_level) VALUES('fire', '
 INSERT INTO Effect(affecting_type, affected_type, effect_level) VALUES('fire', 'grass', 2);
 INSERT INTO Effect(affecting_type, affected_type, effect_level) VALUES('fire', 'ice', 2);
 INSERT INTO Effect(affecting_type, affected_type, effect_level) VALUES('fire', 'fighting', 1);
-INSERT INTO Effect(affecting_type, affected_type, effect_level) VALUES('fire', 'posion', 1);
+INSERT INTO Effect(affecting_type, affected_type, effect_level) VALUES('fire', 'poison', 1);
 INSERT INTO Effect(affecting_type, affected_type, effect_level) VALUES('fire', 'ground', 1);
 INSERT INTO Effect(affecting_type, affected_type, effect_level) VALUES('fire', 'flying', 1);
 INSERT INTO Effect(affecting_type, affected_type, effect_level) VALUES('fire', 'psychic', 1);
@@ -6126,7 +6126,7 @@ INSERT INTO Effect(affecting_type, affected_type, effect_level) VALUES('water', 
 INSERT INTO Effect(affecting_type, affected_type, effect_level) VALUES('water', 'grass', 0.5);
 INSERT INTO Effect(affecting_type, affected_type, effect_level) VALUES('water', 'ice', 1);
 INSERT INTO Effect(affecting_type, affected_type, effect_level) VALUES('water', 'fighting', 1);
-INSERT INTO Effect(affecting_type, affected_type, effect_level) VALUES('water', 'posion', 1);
+INSERT INTO Effect(affecting_type, affected_type, effect_level) VALUES('water', 'poison', 1);
 INSERT INTO Effect(affecting_type, affected_type, effect_level) VALUES('water', 'ground', 2);
 INSERT INTO Effect(affecting_type, affected_type, effect_level) VALUES('water', 'flying', 1);
 INSERT INTO Effect(affecting_type, affected_type, effect_level) VALUES('water', 'psychic', 1);
@@ -6144,7 +6144,7 @@ INSERT INTO Effect(affecting_type, affected_type, effect_level) VALUES('electric
 INSERT INTO Effect(affecting_type, affected_type, effect_level) VALUES('electric', 'grass', 0.5);
 INSERT INTO Effect(affecting_type, affected_type, effect_level) VALUES('electric', 'ice', 1);
 INSERT INTO Effect(affecting_type, affected_type, effect_level) VALUES('electric', 'fighting', 1);
-INSERT INTO Effect(affecting_type, affected_type, effect_level) VALUES('electric', 'posion', 1);
+INSERT INTO Effect(affecting_type, affected_type, effect_level) VALUES('electric', 'poison', 1);
 INSERT INTO Effect(affecting_type, affected_type, effect_level) VALUES('electric', 'ground', 0);
 INSERT INTO Effect(affecting_type, affected_type, effect_level) VALUES('electric', 'flying', 2);
 INSERT INTO Effect(affecting_type, affected_type, effect_level) VALUES('electric', 'psychic', 1);
@@ -6162,7 +6162,7 @@ INSERT INTO Effect(affecting_type, affected_type, effect_level) VALUES('grass', 
 INSERT INTO Effect(affecting_type, affected_type, effect_level) VALUES('grass', 'grass', 0.5);
 INSERT INTO Effect(affecting_type, affected_type, effect_level) VALUES('grass', 'ice', 1);
 INSERT INTO Effect(affecting_type, affected_type, effect_level) VALUES('grass', 'fighting', 1);
-INSERT INTO Effect(affecting_type, affected_type, effect_level) VALUES('grass', 'posion', 0.5);
+INSERT INTO Effect(affecting_type, affected_type, effect_level) VALUES('grass', 'poison', 0.5);
 INSERT INTO Effect(affecting_type, affected_type, effect_level) VALUES('grass', 'ground', 2);
 INSERT INTO Effect(affecting_type, affected_type, effect_level) VALUES('grass', 'flying', 0.5);
 INSERT INTO Effect(affecting_type, affected_type, effect_level) VALUES('grass', 'psychic', 1);
@@ -6180,7 +6180,7 @@ INSERT INTO Effect(affecting_type, affected_type, effect_level) VALUES('ice', 'e
 INSERT INTO Effect(affecting_type, affected_type, effect_level) VALUES('ice', 'grass', 2);
 INSERT INTO Effect(affecting_type, affected_type, effect_level) VALUES('ice', 'ice', 0.5);
 INSERT INTO Effect(affecting_type, affected_type, effect_level) VALUES('ice', 'fighting', 1);
-INSERT INTO Effect(affecting_type, affected_type, effect_level) VALUES('ice', 'posion', 1);
+INSERT INTO Effect(affecting_type, affected_type, effect_level) VALUES('ice', 'poison', 1);
 INSERT INTO Effect(affecting_type, affected_type, effect_level) VALUES('ice', 'ground', 2);
 INSERT INTO Effect(affecting_type, affected_type, effect_level) VALUES('ice', 'flying', 2);
 INSERT INTO Effect(affecting_type, affected_type, effect_level) VALUES('ice', 'psychic', 1);
@@ -6198,7 +6198,7 @@ INSERT INTO Effect(affecting_type, affected_type, effect_level) VALUES('fighting
 INSERT INTO Effect(affecting_type, affected_type, effect_level) VALUES('fighting', 'grass', 1);
 INSERT INTO Effect(affecting_type, affected_type, effect_level) VALUES('fighting', 'ice', 2);
 INSERT INTO Effect(affecting_type, affected_type, effect_level) VALUES('fighting', 'fighting', 1);
-INSERT INTO Effect(affecting_type, affected_type, effect_level) VALUES('fighting', 'posion', 0.5);
+INSERT INTO Effect(affecting_type, affected_type, effect_level) VALUES('fighting', 'poison', 0.5);
 INSERT INTO Effect(affecting_type, affected_type, effect_level) VALUES('fighting', 'ground', 1);
 INSERT INTO Effect(affecting_type, affected_type, effect_level) VALUES('fighting', 'flying', 0.5);
 INSERT INTO Effect(affecting_type, affected_type, effect_level) VALUES('fighting', 'psychic', 0.5);
@@ -6216,7 +6216,7 @@ INSERT INTO Effect(affecting_type, affected_type, effect_level) VALUES('poison',
 INSERT INTO Effect(affecting_type, affected_type, effect_level) VALUES('poison', 'grass', 2);
 INSERT INTO Effect(affecting_type, affected_type, effect_level) VALUES('poison', 'ice', 1);
 INSERT INTO Effect(affecting_type, affected_type, effect_level) VALUES('poison', 'fighting', 1);
-INSERT INTO Effect(affecting_type, affected_type, effect_level) VALUES('poison', 'posion', 0.5);
+INSERT INTO Effect(affecting_type, affected_type, effect_level) VALUES('poison', 'poison', 0.5);
 INSERT INTO Effect(affecting_type, affected_type, effect_level) VALUES('poison', 'ground', 0.5);
 INSERT INTO Effect(affecting_type, affected_type, effect_level) VALUES('poison', 'flying', 1);
 INSERT INTO Effect(affecting_type, affected_type, effect_level) VALUES('poison', 'psychic', 1);
@@ -6234,7 +6234,7 @@ INSERT INTO Effect(affecting_type, affected_type, effect_level) VALUES('ground',
 INSERT INTO Effect(affecting_type, affected_type, effect_level) VALUES('ground', 'grass', 0.5);
 INSERT INTO Effect(affecting_type, affected_type, effect_level) VALUES('ground', 'ice', 1);
 INSERT INTO Effect(affecting_type, affected_type, effect_level) VALUES('ground', 'fighting', 1);
-INSERT INTO Effect(affecting_type, affected_type, effect_level) VALUES('ground', 'posion', 2);
+INSERT INTO Effect(affecting_type, affected_type, effect_level) VALUES('ground', 'poison', 2);
 INSERT INTO Effect(affecting_type, affected_type, effect_level) VALUES('ground', 'ground', 1);
 INSERT INTO Effect(affecting_type, affected_type, effect_level) VALUES('ground', 'flying', 0);
 INSERT INTO Effect(affecting_type, affected_type, effect_level) VALUES('ground', 'psychic', 1);
@@ -6252,7 +6252,7 @@ INSERT INTO Effect(affecting_type, affected_type, effect_level) VALUES('flying',
 INSERT INTO Effect(affecting_type, affected_type, effect_level) VALUES('flying', 'grass', 2);
 INSERT INTO Effect(affecting_type, affected_type, effect_level) VALUES('flying', 'ice', 1);
 INSERT INTO Effect(affecting_type, affected_type, effect_level) VALUES('flying', 'fighting', 2);
-INSERT INTO Effect(affecting_type, affected_type, effect_level) VALUES('flying', 'posion', 1);
+INSERT INTO Effect(affecting_type, affected_type, effect_level) VALUES('flying', 'poison', 1);
 INSERT INTO Effect(affecting_type, affected_type, effect_level) VALUES('flying', 'ground', 1);
 INSERT INTO Effect(affecting_type, affected_type, effect_level) VALUES('flying', 'flying', 1);
 INSERT INTO Effect(affecting_type, affected_type, effect_level) VALUES('flying', 'psychic', 1);
@@ -6270,7 +6270,7 @@ INSERT INTO Effect(affecting_type, affected_type, effect_level) VALUES('psychic'
 INSERT INTO Effect(affecting_type, affected_type, effect_level) VALUES('psychic', 'grass', 1);
 INSERT INTO Effect(affecting_type, affected_type, effect_level) VALUES('psychic', 'ice', 1);
 INSERT INTO Effect(affecting_type, affected_type, effect_level) VALUES('psychic', 'fighting', 2);
-INSERT INTO Effect(affecting_type, affected_type, effect_level) VALUES('psychic', 'posion', 2);
+INSERT INTO Effect(affecting_type, affected_type, effect_level) VALUES('psychic', 'poison', 2);
 INSERT INTO Effect(affecting_type, affected_type, effect_level) VALUES('psychic', 'ground', 1);
 INSERT INTO Effect(affecting_type, affected_type, effect_level) VALUES('psychic', 'flying', 1);
 INSERT INTO Effect(affecting_type, affected_type, effect_level) VALUES('psychic', 'psychic', 0.5);
@@ -6288,7 +6288,7 @@ INSERT INTO Effect(affecting_type, affected_type, effect_level) VALUES('bug', 'e
 INSERT INTO Effect(affecting_type, affected_type, effect_level) VALUES('bug', 'grass', 2);
 INSERT INTO Effect(affecting_type, affected_type, effect_level) VALUES('bug', 'ice', 1);
 INSERT INTO Effect(affecting_type, affected_type, effect_level) VALUES('bug', 'fighting', 0.5);
-INSERT INTO Effect(affecting_type, affected_type, effect_level) VALUES('bug', 'posion', 0.5);
+INSERT INTO Effect(affecting_type, affected_type, effect_level) VALUES('bug', 'poison', 0.5);
 INSERT INTO Effect(affecting_type, affected_type, effect_level) VALUES('bug', 'ground', 1);
 INSERT INTO Effect(affecting_type, affected_type, effect_level) VALUES('bug', 'flying', 0.5);
 INSERT INTO Effect(affecting_type, affected_type, effect_level) VALUES('bug', 'psychic', 2);
@@ -6306,7 +6306,7 @@ INSERT INTO Effect(affecting_type, affected_type, effect_level) VALUES('rock', '
 INSERT INTO Effect(affecting_type, affected_type, effect_level) VALUES('rock', 'grass', 1);
 INSERT INTO Effect(affecting_type, affected_type, effect_level) VALUES('rock', 'ice', 2);
 INSERT INTO Effect(affecting_type, affected_type, effect_level) VALUES('rock', 'fighting', 0.5);
-INSERT INTO Effect(affecting_type, affected_type, effect_level) VALUES('rock', 'posion', 1);
+INSERT INTO Effect(affecting_type, affected_type, effect_level) VALUES('rock', 'poison', 1);
 INSERT INTO Effect(affecting_type, affected_type, effect_level) VALUES('rock', 'ground', 0.5);
 INSERT INTO Effect(affecting_type, affected_type, effect_level) VALUES('rock', 'flying', 2);
 INSERT INTO Effect(affecting_type, affected_type, effect_level) VALUES('rock', 'psychic', 1);
@@ -6324,7 +6324,7 @@ INSERT INTO Effect(affecting_type, affected_type, effect_level) VALUES('ghost', 
 INSERT INTO Effect(affecting_type, affected_type, effect_level) VALUES('ghost', 'grass', 1);
 INSERT INTO Effect(affecting_type, affected_type, effect_level) VALUES('ghost', 'ice', 1);
 INSERT INTO Effect(affecting_type, affected_type, effect_level) VALUES('ghost', 'fighting', 1);
-INSERT INTO Effect(affecting_type, affected_type, effect_level) VALUES('ghost', 'posion', 1);
+INSERT INTO Effect(affecting_type, affected_type, effect_level) VALUES('ghost', 'poison', 1);
 INSERT INTO Effect(affecting_type, affected_type, effect_level) VALUES('ghost', 'ground', 1);
 INSERT INTO Effect(affecting_type, affected_type, effect_level) VALUES('ghost', 'flying', 1);
 INSERT INTO Effect(affecting_type, affected_type, effect_level) VALUES('ghost', 'psychic', 2);
@@ -6342,7 +6342,7 @@ INSERT INTO Effect(affecting_type, affected_type, effect_level) VALUES('dragon',
 INSERT INTO Effect(affecting_type, affected_type, effect_level) VALUES('dragon', 'grass', 1);
 INSERT INTO Effect(affecting_type, affected_type, effect_level) VALUES('dragon', 'ice', 1);
 INSERT INTO Effect(affecting_type, affected_type, effect_level) VALUES('dragon', 'fighting', 1);
-INSERT INTO Effect(affecting_type, affected_type, effect_level) VALUES('dragon', 'posion', 1);
+INSERT INTO Effect(affecting_type, affected_type, effect_level) VALUES('dragon', 'poison', 1);
 INSERT INTO Effect(affecting_type, affected_type, effect_level) VALUES('dragon', 'ground', 1);
 INSERT INTO Effect(affecting_type, affected_type, effect_level) VALUES('dragon', 'flying', 1);
 INSERT INTO Effect(affecting_type, affected_type, effect_level) VALUES('dragon', 'psychic', 1);
@@ -6360,7 +6360,7 @@ INSERT INTO Effect(affecting_type, affected_type, effect_level) VALUES('dark', '
 INSERT INTO Effect(affecting_type, affected_type, effect_level) VALUES('dark', 'grass', 1);
 INSERT INTO Effect(affecting_type, affected_type, effect_level) VALUES('dark', 'ice', 1);
 INSERT INTO Effect(affecting_type, affected_type, effect_level) VALUES('dark', 'fighting', 0.5);
-INSERT INTO Effect(affecting_type, affected_type, effect_level) VALUES('dark', 'posion', 1);
+INSERT INTO Effect(affecting_type, affected_type, effect_level) VALUES('dark', 'poison', 1);
 INSERT INTO Effect(affecting_type, affected_type, effect_level) VALUES('dark', 'ground', 1);
 INSERT INTO Effect(affecting_type, affected_type, effect_level) VALUES('dark', 'flying', 1);
 INSERT INTO Effect(affecting_type, affected_type, effect_level) VALUES('dark', 'psychic', 2);
@@ -6378,7 +6378,7 @@ INSERT INTO Effect(affecting_type, affected_type, effect_level) VALUES('steel', 
 INSERT INTO Effect(affecting_type, affected_type, effect_level) VALUES('steel', 'grass', 1);
 INSERT INTO Effect(affecting_type, affected_type, effect_level) VALUES('steel', 'ice', 2);
 INSERT INTO Effect(affecting_type, affected_type, effect_level) VALUES('steel', 'fighting', 1);
-INSERT INTO Effect(affecting_type, affected_type, effect_level) VALUES('steel', 'posion', 1);
+INSERT INTO Effect(affecting_type, affected_type, effect_level) VALUES('steel', 'poison', 1);
 INSERT INTO Effect(affecting_type, affected_type, effect_level) VALUES('steel', 'ground', 1);
 INSERT INTO Effect(affecting_type, affected_type, effect_level) VALUES('steel', 'flying', 1);
 INSERT INTO Effect(affecting_type, affected_type, effect_level) VALUES('steel', 'psychic', 1);
@@ -6396,7 +6396,7 @@ INSERT INTO Effect(affecting_type, affected_type, effect_level) VALUES('fairy', 
 INSERT INTO Effect(affecting_type, affected_type, effect_level) VALUES('fairy', 'grass', 1);
 INSERT INTO Effect(affecting_type, affected_type, effect_level) VALUES('fairy', 'ice', 1);
 INSERT INTO Effect(affecting_type, affected_type, effect_level) VALUES('fairy', 'fighting', 2);
-INSERT INTO Effect(affecting_type, affected_type, effect_level) VALUES('fairy', 'posion', 0.5);
+INSERT INTO Effect(affecting_type, affected_type, effect_level) VALUES('fairy', 'poison', 0.5);
 INSERT INTO Effect(affecting_type, affected_type, effect_level) VALUES('fairy', 'ground', 1);
 INSERT INTO Effect(affecting_type, affected_type, effect_level) VALUES('fairy', 'flying', 1);
 INSERT INTO Effect(affecting_type, affected_type, effect_level) VALUES('fairy', 'psychic', 1);
