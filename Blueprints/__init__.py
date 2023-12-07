@@ -1,6 +1,6 @@
 import os
 from flask import Flask
-from .views import views # importing the views.py
+#from .views import views # importing the views.py
 import pymssql
 from pymssql import Error
 import getpass
@@ -8,6 +8,7 @@ import getpass
 # create flask app
 def create_app():
     app = Flask(__name__)
+    from .views import views # importing the views.py
     app.register_blueprint(views, url_prefix='/')
 
     return app

@@ -1,0 +1,32 @@
+{% extends "pageTemplate.html" %}
+
+{% block content %}
+
+<h1>New Pokemon by Type</h1>
+<p>This displays how many Pokemon were introduced in a Game by type</p>
+<form method="POST" action="#">
+    <label>Games</label>
+    <select id="Games" name="Games" class="form-control">
+        <option value="None">None</option>
+        {% for game in Game}
+        <option value="{{game[0]}}">{{game[0]}}</option>
+        {% endfor %}
+    </select>
+</form>
+
+
+{% endblock %}
+
+{% block scripts %}
+<script>
+    $(document).ready(function () {
+        $('#Type').DataTable({
+            columns: [
+                { data: 'Type', searchable: true },
+                { data: 'Num Pokemon', searchable: false }
+            ],
+        });
+    });
+</script>
+
+{% endblock %}
