@@ -17,3 +17,7 @@ def homepage():
 @views.route('/pokemon')
 def pokemon_page():
     return render_template("pokemon.html")
+
+@views.route('/moves')
+def moves_page():
+    return render_template("moves.html")

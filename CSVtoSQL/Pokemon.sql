@@ -1345,11 +1345,7 @@ INSERT INTO Pokemon(nat_id, pok_name, orig_game, evolves_from, hp, attack, defen
 INSERT INTO Pokemon(nat_id, pok_name, orig_game, hp, attack, defense) VALUES(111, 'rhyhorn', 'red', 80, 85, 95);
 INSERT INTO Pokemon(nat_id, pok_name, orig_game, evolves_from, hp, attack, defense) VALUES(112, 'rhydon', 'red', 111, 105, 130, 120);
 INSERT INTO Pokemon(nat_id, pok_name, orig_game, evolves_from, hp, attack, defense) VALUES(113, 'chansey', 'red', 440, 250, 5, 5);
-INSERT INTO Pokemon(nat_id, pok_name, orig_game, hp, attack, defense) VALUES(114, 'tangela', 'red', 65, 55, 115);
-INSERT INTO Pokemon(nat_id, pok_name, orig_game, hp, attack, defense) VALUES(115, 'kangaskhan', 'red', 105, 95, 80);
-INSERT INTO Pokemon(nat_id, pok_name, orig_game, hp, attack, defense) VALUES(116, 'horsea', 'red', 30, 40, 70);
 INSERT INTO Pokemon(nat_id, pok_name, orig_game, evolves_from, hp, attack, defense) VALUES(117, 'seadra', 'red', 116, 55, 65, 95);
-INSERT INTO Pokemon(nat_id, pok_name, orig_game, hp, attack, defense) VALUES(118, 'goldeen', 'red', 45, 67, 60);
 INSERT INTO Pokemon(nat_id, pok_name, orig_game, evolves_from, hp, attack, defense) VALUES(119, 'seaking', 'red', 118, 80, 92, 65);
 INSERT INTO Pokemon(nat_id, pok_name, orig_game, hp, attack, defense) VALUES(120, 'staryu', 'red', 30, 45, 55);
 INSERT INTO Pokemon(nat_id, pok_name, orig_game, evolves_from, hp, attack, defense) VALUES(121, 'starmie', 'red', 120, 60, 75, 85);
@@ -1900,7 +1896,7 @@ INSERT INTO Pokemon(nat_id, pok_name, orig_game, evolves_from, hp, attack, defen
 INSERT INTO Pokemon(nat_id, pok_name, orig_game, evolves_from, hp, attack, defense) VALUES(666, 'vivillon', 'x', 665, 80, 52, 50);
 INSERT INTO Pokemon(nat_id, pok_name, orig_game, hp, attack, defense) VALUES(667, 'litleo', 'x', 62, 50, 58);
 INSERT INTO Pokemon(nat_id, pok_name, orig_game, evolves_from, hp, attack, defense) VALUES(668, 'pyroar', 'x', 667, 86, 68, 72);
-INSERT INTO Pokemon(nat_id, pok_name, orig_game, hp, attack, defense) VALUES(669, 'flabã©bã©', 'x', 44, 38, 39);
+INSERT INTO Pokemon(nat_id, pok_name, orig_game, hp, attack, defense) VALUES(669, 'flabï¿½bï¿½', 'x', 44, 38, 39);
 INSERT INTO Pokemon(nat_id, pok_name, orig_game, evolves_from, hp, attack, defense) VALUES(670, 'floette', 'x', 669, 54, 45, 47);
 INSERT INTO Pokemon(nat_id, pok_name, orig_game, evolves_from, hp, attack, defense) VALUES(671, 'florges', 'x', 670, 78, 65, 68);
 INSERT INTO Pokemon(nat_id, pok_name, orig_game, hp, attack, defense) VALUES(672, 'skiddo', 'x', 66, 65, 48);
@@ -2039,8 +2035,8 @@ INSERT INTO Pokemon(nat_id, pok_name, orig_game, evolves_from, hp, attack, defen
 INSERT INTO Pokemon(nat_id, pok_name, orig_game, hp, attack, defense) VALUES(805, 'stakataka', 'ultra sun', 61, 131, 211);
 INSERT INTO Pokemon(nat_id, pok_name, orig_game, hp, attack, defense) VALUES(806, 'blacephalon', 'ultra sun', 53, 127, 53);
 INSERT INTO Pokemon(nat_id, pok_name, orig_game, hp, attack, defense) VALUES(807, 'zeraora', 'ultra sun', 88, 112, 75);
-INSERT INTO Pokemon(nat_id, pok_name, orig_game, hp, attack, defense) VALUES(808, 'meltan', 'pokã©mon go', 46, 65, 65);
-INSERT INTO Pokemon(nat_id, pok_name, orig_game, evolves_from, hp, attack, defense) VALUES(809, 'melmetal', 'pokã©mon go', 808, 135, 143, 143);
+INSERT INTO Pokemon(nat_id, pok_name, orig_game, hp, attack, defense) VALUES(808, 'meltan', 'pokï¿½mon go', 46, 65, 65);
+INSERT INTO Pokemon(nat_id, pok_name, orig_game, evolves_from, hp, attack, defense) VALUES(809, 'melmetal', 'pokï¿½mon go', 808, 135, 143, 143);
 INSERT INTO Pokemon(nat_id, pok_name, orig_game, hp, attack, defense) VALUES(810, 'grookey', 'sword', 50, 65, 50);
 INSERT INTO Pokemon(nat_id, pok_name, orig_game, evolves_from, hp, attack, defense) VALUES(811, 'thwackey', 'sword', 810, 70, 85, 70);
 INSERT INTO Pokemon(nat_id, pok_name, orig_game, evolves_from, hp, attack, defense) VALUES(812, 'rillaboom', 'sword', 811, 100, 125, 90);
