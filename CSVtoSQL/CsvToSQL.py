@@ -4,6 +4,7 @@
 
 import csv
 import re
+import os
 ###########################################################################################################################################
 
 def dropTablesAndSetup(sqlFileName):
@@ -353,6 +354,10 @@ def rosterInserts(sqlFileName, csvFileName, pokemonCSV):
                      
 
 def init():
+    path = os.path.realpath(__file__)
+    dir = os.path.dirname(path)
+    os.chdir(dir)
+
     sqlFileName = 'Pokemon.sql'
     pokemonCSV = 'Pokemon Database.csv'
     gamesCSV = 'AllGames.csv'
