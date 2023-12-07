@@ -58,3 +58,13 @@ def newPkmnInfoResult_page():
     
 
     return render_template('newPkmnIntro_result.html', Type=types)
+
+
+@views.route('/moves')
+def pokemon_page():
+    curr = conn.cursor()
+    all_moves = 'SELECT * FROM Moves'
+    curr.execute(all_moves)
+    result = curr.fetchall()
+
+    return render_template("moves.html", Moves=result)
