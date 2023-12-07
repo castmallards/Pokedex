@@ -186,12 +186,15 @@ def pokemonInserts(sqlFileName, csvFileName):
                 if(row and row[4] == 'NULL' and row[1] not in natIDList): 
                     nat_id = row[1]
                     natIDList.append(nat_id) #append to list if found
+                    
                     #clean up quotes
                     pok_name = re.sub('"', "", row[2])
                     pok_name = re.sub("'", "''", pok_name)
+                    pok_name = re.sub("Ã©", "e", pok_name) #one special case char
                     pok_name = "'" + pok_name + "'" #add quotes for ease
                     orig_game = re.sub('"', "", row[22])
                     
+
                     if(orig_game.lower() in gameList):
                         orig_game = "'" + orig_game + "'" #add quotes for ease
                         evolvesFrom = getNatIDFromLocalID(row[43], csvFileName)
@@ -212,6 +215,7 @@ def has_abilityInserts(sqlFileName, csvFileName):
     if(sqlFileName and csvFileName):
         sqlWriter = open(sqlFileName, "a")
         sqlWriter.write("--Has_ability inserts here\n")  
+        gameList = ['red', 'blue', 'yellow', 'gold', 'silver', 'crystal', 'ruby', 'sapphire', 'emerald', 'diamond', 'pearl', 'platinum', 'black', 'white', 'x', 'y', 'sun', 'moon', 'sword', 'shield', 'scarlet', 'violet']
         with open(csvFileName, 'r') as csvFile:
             csvReader = csv.reader(csvFile)
             next(csvReader, None) 
@@ -228,12 +232,15 @@ def has_abilityInserts(sqlFileName, csvFileName):
                     hidden_ability = re.sub('"', "", row[15])
                     hidden_ability = re.sub("'", "''", hidden_ability)
 
-                    if(primary_ability != 'NULL'):
-                        sqlWriter.write("INSERT INTO Has_ability(nat_id, ability_name, ability_type) VALUES(" + nat_id + ", '" + primary_ability.lower() + "', 'primary');\n")
-                    if(second_ability != 'NULL'):
-                        sqlWriter.write("INSERT INTO Has_ability(nat_id, ability_name, ability_type) VALUES(" + nat_id + ", '" + second_ability.lower() + "', 'secondary');\n")
-                    if(hidden_ability != 'NULL'):
-                        sqlWriter.write("INSERT INTO Has_ability(nat_id, ability_name, ability_type) VALUES(" + nat_id + ", '" + hidden_ability.lower() + "', 'hidden');\n")
+                    orig_game = re.sub('"', "", row[22])
+
+                    if(orig_game.lower() in gameList):
+                        if(primary_ability != 'NULL'):
+                            sqlWriter.write("INSERT INTO Has_ability(nat_id, ability_name, ability_type) VALUES(" + nat_id + ", '" + primary_ability.lower() + "', 'primary');\n")
+                        if(second_ability != 'NULL'):
+                            sqlWriter.write("INSERT INTO Has_ability(nat_id, ability_name, ability_type) VALUES(" + nat_id + ", '" + second_ability.lower() + "', 'secondary');\n")
+                        if(hidden_ability != 'NULL'):
+                            sqlWriter.write("INSERT INTO Has_ability(nat_id, ability_name, ability_type) VALUES(" + nat_id + ", '" + hidden_ability.lower() + "', 'hidden');\n")
             sqlWriter.write("\n")
             csvFile.close()
             sqlWriter.close()
@@ -243,6 +250,7 @@ def has_typeInserts(sqlFileName, csvFileName):
     if(sqlFileName and csvFileName):
         sqlWriter = open(sqlFileName, "a")
         sqlWriter.write("--Has_type inserts here\n")  
+        gameList = ['red', 'blue', 'yellow', 'gold', 'silver', 'crystal', 'ruby', 'sapphire', 'emerald', 'diamond', 'pearl', 'platinum', 'black', 'white', 'x', 'y', 'sun', 'moon', 'sword', 'shield', 'scarlet', 'violet']
         with open(csvFileName, 'r') as csvFile:
             csvReader = csv.reader(csvFile)
             next(csvReader, None) #skip header
@@ -259,10 +267,13 @@ def has_typeInserts(sqlFileName, csvFileName):
                     secondary_type = re.sub('"', "", row[10])
                     secondary_type = re.sub("'", "''", secondary_type)
 
-                    if(primary_type != 'NULL'): 
-                        sqlWriter.write("INSERT INTO Has_type(nat_id, type_name) VALUES(" + nat_id + ",'" + primary_type.lower() + "');\n")
-                    if(secondary_type != 'NULL'):
-                        sqlWriter.write("INSERT INTO Has_type(nat_id, type_name) VALUES(" + nat_id + ",'" + secondary_type.lower() + "');\n")
+                    orig_game = re.sub('"', "", row[22])
+
+                    if(orig_game.lower() in gameList):
+                        if(primary_type != 'NULL'): 
+                            sqlWriter.write("INSERT INTO Has_type(nat_id, type_name) VALUES(" + nat_id + ",'" + primary_type.lower() + "');\n")
+                        if(secondary_type != 'NULL'):
+                            sqlWriter.write("INSERT INTO Has_type(nat_id, type_name) VALUES(" + nat_id + ",'" + secondary_type.lower() + "');\n")
             sqlWriter.write("\n")
             csvFile.close()
             sqlWriter.close()
