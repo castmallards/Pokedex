@@ -79,8 +79,15 @@ def effect_page():
     return render_template("effect.html", Effect=result)
 
 def validate_input(input_str):
-    #malicious_injections = ['SELECT', 'INSERT', '']
-    return True
+    is_valid = True
+
+    malicious_strings = ['INSERT', 'ADD','CREATE', 'DELETE', 'WHERE','DROP','SELECT', 'INSERT', '=', '*', '--', '<', '>']
+
+    for row in malicious_strings:
+        if(row in input_str):
+            is_valid = False
+
+    return is_valid
 
 @views.route('/hasAbility')
 def hasAbility_page():
@@ -129,3 +136,11 @@ def roster_page():
     curr.execute(roster)
     result = curr.fetchall()
     return render_template("roster.html", Roster=result)
+
+@views.route('/evolutions')
+def evolutions_page():
+    curr = conn.cursor()
+    all_evolutions = 'SELECT p1.pok_name, p2.pok_name, p3.pok_name FROM Pokemon p1 LEFT JOIN Pokemon p2 ON p2.evolves_from = p1.nat_id LEFT JOIN Pokemon p3 ON p3.evolves_from = p2.nat_id ORDER BY p1.pok_name;'
+    curr.execute(all_evolutions)
+    result = curr.fetchall()
+    return render_template("evolutions.html", Evolutions=result)

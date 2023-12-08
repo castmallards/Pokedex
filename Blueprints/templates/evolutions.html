@@ -1,0 +1,41 @@
+{% extends "pageTemplate.html" %}
+
+{% block content %}
+
+<h1>Pokemon Evolutions</h1>
+<p>A pokemon can evolve 0, 1 or 2 times. None implies no evolution at that level.</p>
+
+<table id="Evolutions" class="table table-hover">
+    <thead>
+        <th scope="col">Pokemon Name</th>
+        <th scope="col">First Evolution</th>
+        <th scope="col">Second Evolution</th>
+    </thead>
+    <tbody style="overflow: auto;">
+        {% for evo in Evolutions %}
+        <tr>
+            <td>{{evo[0]}}</td>
+            <td>{{evo[1]}}</td>
+            <td>{{evo[2]}}</td>
+           
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+{% endblock %}
+
+{% block scripts %}
+<script>
+    $(document).ready(function () {
+        $('#Evolutions').DataTable({
+            columns: [
+                { data: 'Pokemon Name', searchable: true },
+                { data: 'First Evolution', searchable: false },
+                { data: 'Second Evolution', searchable: false },
+            ],
+        });
+    });
+</script>
+
+{% endblock %}
