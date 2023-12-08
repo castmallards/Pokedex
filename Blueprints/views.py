@@ -144,3 +144,14 @@ def evolutions_page():
     curr.execute(all_evolutions)
     result = curr.fetchall()
     return render_template("evolutions.html", Evolutions=result)
+
+@views.route('/allAbilities')
+def all_abilities_page():
+    curr = conn.cursor()
+    first_cte = 'WITH primaries AS ( SELECT Pokemon.nat_id, Has_ability.ability_name FROM Pokemon JOIN Has_ability ON Pokemon.nat_id = Has_ability.nat_id WHERE Has_ability.ability_type = \'primary\'),'
+    second_cte = 'secondaries AS ( SELECT Pokemon.nat_id, Has_ability.ability_name FROM Pokemon JOIN Has_ability ON Pokemon.nat_id = Has_ability.nat_id WHERE Has_ability.ability_type = \'secondary\'),'
+    third_cte = 'hiddens AS ( SELECT Pokemon.nat_id, Has_ability.ability_name FROM Pokemon JOIN Has_ability ON Pokemon.nat_id = Has_ability.nat_id WHERE Has_ability.ability_type = \'hidden\') '
+    all_abilities = first_cte + second_cte + third_cte + 'SELECT Pokemon.nat_id, Pokemon.pok_name,primaries.ability_name, secondaries.ability_name, hiddens.ability_name FROM Pokemon LEFT JOIN primaries ON Pokemon.nat_id = primaries.nat_id LEFT JOIN secondaries ON Pokemon.nat_id = secondaries.nat_id LEFT JOIN hiddens ON Pokemon.nat_id = hiddens.nat_id ORDER BY Pokemon.nat_id;'
+    curr.execute(all_abilities)
+    result = curr.fetchall()
+    return render_template("allAbilities.html", AllAbilites=result)
