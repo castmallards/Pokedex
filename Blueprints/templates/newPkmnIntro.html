@@ -4,29 +4,12 @@
 
 <h1>New Pokemon by Type</h1>
 <p>This displays how many Pokemon were introduced in a Game by type</p>
-<form method="POST" action="#">
-    <label>Games</label>
-    <select id="Games" name="Games" class="form-control">
-        <option value="None">None</option>
-        {% for game in Game}
-        <option value="{{game[0]}}">{{game[0]}}</option>
-        {% endfor %}
-    </select>
-</form>
-
+<div class="list-group overflow-auto">
+    <h4>Games</h4>
+    {% for game in Games %}
+        <a class="list-group-item list-group-item-action" href="{{url_for('views.newPkmnInfoResult_page', game_name = game[0].replace('/', '%2F'))}}">{{game[0]}}</a>
+    {% endfor %}
+</div>
 
 {% endblock %}
 
-{% block scripts %}
-<script>
-    $(document).ready(function () {
-        $('#Type').DataTable({
-            columns: [
-                { data: 'Type', searchable: true },
-                { data: 'Num Pokemon', searchable: false }
-            ],
-        });
-    });
-</script>
-
-{% endblock %}
