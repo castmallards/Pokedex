@@ -27,34 +27,32 @@ def pokemon_page():
 def moves_page():
     return render_template("moves.html")
 
-@views.route('/newPkmnIntro', methods=["POST"])
+@views.route('/newPkmnIntro')
 def newPkmnIntro_page():
-    query = ""
-    if request.method == "POST":
-        game = request.form['Games']
-        if game == 'None':
-            query = ""
-        else: # Check for SQL injection 
-            query =  game
-    else:
-        query = ""
+    # query = ""
+    # if request.method == "POST":
+    #     game = request.form['Games']
+    #     if game == 'None':
+    #         query = ""
+    #     else: # Check for SQL injection 
+    #         query =  game
+    # else:
+    #     query = ""
     curr = conn.cursor()
     curr.execute('SELECT game_name FROM Games')
     game_list = curr.fetchall()
-
     return render_template('newPkmnIntro.html', Games=game_list)
 
-@views.route('/newPkmnIntro/<game_name>', methods=["GET"])
-def newPkmnInfoResult_page():
+@views.route('/newPkmnIntro/<game_name>')
+def newPkmnInfoResult_page(game_name):
 
-    if request.method == "GET":
-        game = request.form['Games']
-
-    games_list = ''
-    types = ''
+    #check  = validat_injection(game_name)
+    # if check:
+    game = game_name
     curr = conn.cursor()
-    curr.execute('SELECT ')
-    #types = 'SELECT Has_Type.type_name, count(*) as numIntroduced FROM Has_Type LEFT JOIN Pokemon ON Pokemon.nat_id = Has_Type.nat_id WHERE Pokemon.orig_game = \'{}\' GROUP BY Has_Type.type_name ORDER BY numIntroduced DESC;'.format(query)
-    
+    query = 'SELECT Has_Type.type_name, count(*) as numIntroduced FROM Has_Type LEFT JOIN Pokemon ON Pokemon.nat_id = Has_Type.nat_id WHERE Pokemon.orig_game = \'{}\' GROUP BY Has_Type.type_name ORDER BY numIntroduced DESC;'.format(game)
+    curr.execute(query)
+    types = curr.fetchall()
+    print(types)
 
-    return render_template('newPkmnIntro_result.html', Type=types)
+    return render_template('newPknmIntro_result.html', Type=types)
