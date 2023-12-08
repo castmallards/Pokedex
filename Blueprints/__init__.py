@@ -25,6 +25,7 @@ def create_connection(db_filename):
         password = getpass.getpass("Enter password\n")
     except Exception as error:
         print("Wrong input")
+    print("Connecting to Server..")
     conn = pymssql.connect('uranium.cs.umanitoba.ca',username, password, 'cs3380')
     conn.autocommit(True)
     cursor = conn.cursor()
