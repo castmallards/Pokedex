@@ -72,3 +72,6 @@ def games_page():
     curr.execute(all_games)
     result = curr.fetchall()
     return render_template("games.html", Games=result)
+
+def validate_input(input_str):
+    return True
