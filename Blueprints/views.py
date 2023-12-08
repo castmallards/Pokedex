@@ -79,6 +79,7 @@ def effect_page():
     return render_template("effect.html", Effect=result)
 
 def validate_input(input_str):
+    #malicious_injections = ['SELECT', 'INSERT', '']
     return True
 
 @views.route('/hasAbility')
