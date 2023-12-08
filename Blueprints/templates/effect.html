@@ -33,11 +33,11 @@
 {% block scripts %}
 <script>
     $(document).ready(function () {
-        $('#Moves').DataTable({
+        $('#Effect').DataTable({
             columns: [
                 { data: 'Affecting Type', searchable: true },
-                { data: 'Affected Type', searchable: true },
-                { data: 'Effect Level', searchable: true },
+                { data: 'Affected Type', },
+                { data: 'Effect Level', },
             ],
         });
     });
