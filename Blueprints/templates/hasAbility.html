@@ -1,0 +1,39 @@
+{% extends "pageTemplate.html" %}
+
+{% block content %}
+
+<h1>Pokemon and their Abilities </h1>
+
+<table id="hasAbility" class="table table-hover">
+    <thead>
+        <th scope="col">National ID</th>
+        <th scope="col">Ability Name</th>
+        <th scope="col">Ability Type</th>
+    </thead>
+    <tbody style="overflow: auto;">
+        {% for ab in hasAbility%}
+        <tr>
+            <td>{{ab[0]}}</td>
+            <td>{{ab[1]}}</td>
+            <td>{{ab[2]}}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+{% endblock %}
+
+{% block scripts %}
+<script>
+    $(document).ready(function () {
+        $('#hasAbility').DataTable({
+            columns: [
+                { data: 'National ID', searchable: true },
+                { data: 'Ability Name', searchable: true},
+                { data: 'Ability Type', },
+            ],
+        });
+    });
+</script>
+
+{% endblock %}
