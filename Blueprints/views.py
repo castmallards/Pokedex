@@ -88,3 +88,19 @@ def hasAbility_page():
     curr.execute(all_pk_abilities)
     result = curr.fetchall()
     return render_template("hasAbility.html", hasAbility=result)
+
+@views.route('/trainers')
+def trainers_page():
+    curr = conn.cursor()
+    all_trainers = 'SELECT * FROM Trainers'
+    curr.execute(all_trainers)
+    result = curr.fetchall()
+    return render_template("trainers.html", Trainers=result)
+
+@views.route('/bosses')
+def bossess_page():
+    curr = conn.cursor()
+    all_bosses = 'SELECT * FROM Bosses'
+    curr.execute(all_bosses)
+    result = curr.fetchall()
+    return render_template("bosses.html", Bosses=result)
