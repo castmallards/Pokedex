@@ -1,0 +1,35 @@
+{% extends "pageTemplate.html" %}
+
+{% block content %}
+
+<h3>Boss Favorites</h3>
+<p>Displays prefered types of Pokemon that all bosses have in a selected game</p>
+
+<form action="{{ url_for('views.boss_pref_result_page')}}" method="POST">
+    <select name="bossPref" required id="bossPref" class="form-select" aria-label="Game Name">
+        <option value="">None</option>
+        {% for row in Games %}
+        <option value={{row[0]}}>{{row[0]}}</option>
+        {% endfor %}
+    </select>
+    <input type="hidden" name="param1" id="param1">
+
+    <button type="submit" class="btn btn-success">Search</button>
+</form>
+
+{% endblock %}
+
+{% block scripts %}
+<script>
+    // Update hidden input fields with selected values when dropdown selection changes
+    $(document).ready(function(){
+        $('select[name="bossPref"]').change(function(){
+            var dropdownName = $(this).attr('name');
+            var selectedValue = $(this).val();
+            var paramNumber = dropdownName.substring("param".length); // Extract the number part
+            $('#param' + paramNumber).val(selectedValue);
+        });
+    });
+</script>
+
+{% endblock %}

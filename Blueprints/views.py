@@ -157,15 +157,12 @@ def all_abilities_page():
     return render_template("allAbilities.html", AllAbilites=result)
 
 @views.route('/typeSearchResult', methods =["POST"])
-#def type_search_result_page(game, primary_type, secondary_type, operation):
 def type_search_result_page():
 
     game = request.form.get("games")
     primary_type = request.form.get("primary_type")
     secondary_type = request.form.get("secondary_type")
     operation = request.form.get("operator")
-
-    print(game, primary_type, secondary_type, operation)
 
     curr = conn.cursor()
     input_valid = validate_input(game) and validate_input(primary_type) and validate_input(secondary_type) and validate_input(operation)
@@ -189,7 +186,6 @@ def type_search_result_page():
             if(operation == 'or'):
                 full_query = full_query + " UNION " + second_query   
 
-        print('=================>', full_query)
         curr.execute(full_query)
 
         result = curr.fetchall()
@@ -210,3 +206,25 @@ def type_search_page():
     return render_template("typeSearch.html", Games = game_result, Primary = type_result, Secondary = type_result)   
     
         
+@views.route('/bossPref')
+def boss_pref_page():
+    curr = conn.cursor()
+    all_games = 'SELECT game_name FROM Games'
+    curr.execute(all_games)
+    game_names = curr.fetchall()
+
+    return render_template("bossPref.html", Games=game_names)
+
+@views.route('/bossRosterResult', methods=["POST"])
+def boss_pref_result_page():
+    game_name = request.form.get("bossPref")
+    curr = conn.cursor()
+    result = []
+    if validate_input(game_name):
+        query = 'SELECT b.boss_name, ht.type_name as favType, count(*) as numPokemon FROM Bosses b JOIN Roster r ON b.boss_name = r.trainer_name AND b.boss_game = r.game_name JOIN Has_Type ht ON r.nat_id = ht.nat_id WHERE b.boss_game = \'{}\' AND ht.type_name IN ( SELECT TOP(1) Has_Type.type_name FROM Roster JOIN Has_Type ON Roster.nat_id = Has_Type.nat_id WHERE Roster.trainer_name = r.trainer_name GROUP BY type_name ORDER BY COUNT(*) DESC ) GROUP BY b.boss_name, ht.type_name'.format(game_name)
+        curr.execute(query)
+        result = curr.fetchall()
+    return render_template("bossPrefResult.html", prefList=result)
+
+
+    

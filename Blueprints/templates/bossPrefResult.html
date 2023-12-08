@@ -1,0 +1,39 @@
+{% extends "pageTemplate.html" %}
+
+{% block content %}
+<h3>Boss Favorites</h3>
+
+<table id="prefList" class="table table-hover">
+    <thead>
+        <th scope="col">Boss Name</th>
+        <th scope="col">Favorite Type</th>
+        <th scope="col">No. Pokemon of Type</th>
+    </thead>
+    <tbody style="overflow: auto;">
+        {% for ros in prefList %}
+        <tr>
+            <td>{{ros[0]}}</td>
+            <td>{{ros[1]}}</td>
+            <td>{{ros[2]}}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+{% endblock %}
+
+
+{% block scripts %}
+<script>
+    $(document).ready(function () {
+        $('#prefList').DataTable({
+            columns: [
+                { data: 'boss Name', searchable: true  },
+                { data: 'Favorite Type', searchable: true },
+                { data: 'Num Pokemon'  },
+            ],
+        });
+    });
+</script>
+
+{% endblock %}
