@@ -1,0 +1,36 @@
+{% extends "pageTemplate.html" %}
+
+{% block content %}
+
+<h1>All Bosses </h1>
+
+<table id="Bosses" class="table table-hover">
+    <thead>
+        <th scope="col">Name</th>
+        <th scope="col">Game Name</th>
+    </thead>
+    <tbody style="overflow: auto;">
+        {% for b in Bosses%}
+        <tr>
+            <td>{{ab[0]}}</td>
+            <td>{{ab[1]}}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+{% endblock %}
+
+{% block scripts %}
+<script>
+    $(document).ready(function () {
+        $('#bosses').DataTable({
+            columns: [
+                { data: 'Name', searchable: true },
+                { data: 'Game Name', searchable: true }
+            ],
+        });
+    });
+</script>
+
+{% endblock %}
