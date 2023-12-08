@@ -64,3 +64,11 @@ def moves_page():
     curr.execute(all_moves)
     result = curr.fetchall()
     return render_template("moves.html", Moves=result)
+
+@views.route('/games')
+def games_page():
+    curr = conn.cursor()
+    all_games = 'SELECT * FROM Games'
+    curr.execute(all_games)
+    result = curr.fetchall()
+    return render_template("games.html", Games=result)
