@@ -1,0 +1,58 @@
+{% extends "pageTemplate.html" %}
+
+{% block content %}
+
+<h1>Pokemon</h1>
+<p>It will return selected types of Pokemon from different games</p>
+
+<form action="{{ url_for('views.type_search_result_page')}}" method="POST">
+    <select name="games" id="Games" class="form-select" aria-label="Games">
+        <option selected value="All_Games">All Games</option>
+        {% for row in Games %}
+        <option value={{row[0]}}>{{row[0]}}</option>
+        {% endfor %}
+    </select>
+
+    <select name="primary" id="Primary" required class="form-select" aria-label="Primary">
+        <option value="">None</option>
+        {% for row in Primary %}
+        <option value={{row[0]}}>{{row[0]}}</option>
+        {% endfor %}
+    </select>
+
+    <select name="operator" class="form-select" aria-label="Operator">
+        <option value="AND">AND</option>
+        <option value="OR">OR</option>
+    </select>
+
+    <select name="secondary" id="Secondary" class="form-select" aria-label="Secondary">
+        <option value="">None</option>
+        {% for row in Secondary %}
+        <option value={{row[0]}}>{{row[0]}}</option>
+        {% endfor %}
+    </select>
+
+    <input type="hidden" name="param1" id="param1">
+    <input type="hidden" name="param2" id="param2">
+    <input type="hidden" name="param3" id="param3">
+    <input type="hidden" name="param4" id="param4">
+
+    <button type="submit" class="btn btn-success">Search</button>
+</form>
+    
+{% endblock %}
+
+{% block scripts %}
+<script>
+    // Update hidden input fields with selected values when dropdown selection changes
+    $(document).ready(function(){
+        $('select[name="games"], select[name="primary"], select[name="operator"], select[name="secondary"]').change(function(){
+            var dropdownName = $(this).attr('name');
+            var selectedValue = $(this).val();
+            var paramNumber = dropdownName.substring("param".length); // Extract the number part
+            $('#param' + paramNumber).val(selectedValue);
+        });
+    });
+</script>
+
+{% endblock %}
