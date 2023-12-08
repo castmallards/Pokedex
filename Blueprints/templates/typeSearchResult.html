@@ -4,7 +4,7 @@
 
 
 
-<table id="typeSearchResult" class="table table-hover">
+<table id="TypeSearchResults" class="table table-hover">
     <thead>
         <th scope="col">Pokemon Name</th>
         <th scope="col">HP</th>
@@ -12,7 +12,7 @@
         <th scope="col">Defence</th>
     </thead>
     <tbody style="overflow: auto;">
-        {% for pok in typeSearchResult%}
+        {% for pok in TypeSearchResults %}
         <tr>
             <td>{{pok[0]}}</td>
             <td>{{pok[1]}}</td>
@@ -29,13 +29,12 @@
 {% block scripts %}
 <script>
     $(document).ready(function () {
-        $('#Pokemon').DataTable({
+        $('#TypeSearchResults').DataTable({
             columns: [
                 { data: 'Pokemon Name', searchable: true },
-                { data: 'HP'     },
+                { data: 'HP' },
                 { data: 'Attack' },
-                { data: 'Attack' },
-                { data: 'Defence'}
+                { data: 'Defence'},
             ],
         });
     });
