@@ -79,6 +79,7 @@ def effect_page():
     return render_template("effect.html", Effect=result)
 
 def validate_input(input_str):
+    #malicious_injections = ['SELECT', 'INSERT', '']
     return True
 
 @views.route('/hasAbility')
@@ -104,3 +105,11 @@ def bossess_page():
     curr.execute(all_bosses)
     result = curr.fetchall()
     return render_template("bosses.html", Bosses=result)
+
+@views.route('/types')
+def types_page():
+    curr = conn.cursor()
+    all_types = 'SELECT * FROM Types'
+    curr.execute(all_types)
+    result = curr.fetchall()
+    return render_template("types.html", Types=result)
