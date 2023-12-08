@@ -1,0 +1,38 @@
+{% extends "pageTemplate.html" %}
+
+{% block content %}
+
+<select id="Games" class="form-select" aria-label="Default select example">
+    <option selected value="All_Games">All Games</option>
+    {% for row in Games %}
+    <option value={{row[0]}}>{{row[0]}}</option>
+    {% endfor %}
+</select>
+
+<select id="Primary" required class="form-select" aria-label="Default select example">
+    <option value="">None</option>
+    {% for row in Primary %}
+    <option value={{row[0]}}>{{row[0]}}</option>
+    {% endfor %}
+</select>
+
+<select class="form-select" aria-label="Default select example">
+    <option value="AND">AND</option>
+    <option value="OR">OR</option>
+</select>
+
+<select id="Secondary" class="form-select" aria-label="Default select example">
+    <option value="">None</option>
+    {% for row in Secondary %}
+    <option value={{row[0]}}>{{row[0]}}</option>
+    {% endfor %}
+</select>
+
+<div class="row">
+    <div class="col">
+        <button type="button" class="btn btn-outline-success">Search</button>
+    </div>
+
+</div>
+
+{% endblock %}
