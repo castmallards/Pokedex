@@ -1,0 +1,47 @@
+{% extends "pageTemplate.html" %}
+
+{% block content %}
+
+<h1>Pokemon Abilities</h1>
+<p>A pokemon can have up to 3 abilites. Primary, secondary and hidden. None indicates that is does not it.</p>
+<p>National ID and name are searchable. </p>
+
+<table id="AllAbilites" class="table table-hover">
+    <thead>
+        <th scope="col">National ID</th>
+        <th scope="col">Pokemon Name</th>
+        <th scope="col">Primary Ability</th>
+        <th scope="col">Secondary Ability</th>
+        <th scope="col">Hidden Ability</th>
+    </thead>
+    <tbody style="overflow: auto;">
+        {% for aab in AllAbilites %}
+        <tr>
+            <td>{{aab[0]}}</td>
+            <td>{{aab[1]}}</td>
+            <td>{{aab[2]}}</td>
+            <td>{{aab[3]}}</td>
+            <td>{{aab[4]}}</td>           
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+{% endblock %}
+
+{% block scripts %}
+<script>
+    $(document).ready(function () {
+        $('#AllAbilites').DataTable({
+            columns: [
+                { data: 'National ID', searchable: true },
+                { data: 'Pokemon Name', searchable: true },
+                { data: 'Primary Ability', searchable: false },
+                { data: 'Secondary Ability', searchable: false },
+                { data: 'Hidden Ability', searchable: false },
+            ],
+        });
+    });
+</script>
+
+{% endblock %}
