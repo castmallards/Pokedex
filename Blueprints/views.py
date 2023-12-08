@@ -88,3 +88,11 @@ def hasAbility_page():
     curr.execute(all_pk_abilities)
     result = curr.fetchall()
     return render_template("hasAbility.html", hasAbility=result)
+
+@views.route('/types')
+def types_page():
+    curr = conn.cursor()
+    all_types = 'SELECT * FROM Types'
+    curr.execute(all_types)
+    result = curr.fetchall()
+    return render_template("types.html", Types=result)
