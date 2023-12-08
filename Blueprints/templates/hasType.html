@@ -1,0 +1,37 @@
+{% extends "pageTemplate.html" %}
+
+{% block content %}
+
+<h1>Pokemon and their Types </h1>
+
+<table id="hasType" class="table table-hover">
+    <thead>
+        <th scope="col">National ID</th>
+        <th scope="col">Type Name</th>
+        
+    </thead>
+    <tbody style="overflow: auto;">
+        {% for ht in hasType%}
+        <tr>
+            <td>{{ht[0]}}</td>
+            <td>{{ht[1]}}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+{% endblock %}
+
+{% block scripts %}
+<script>
+    $(document).ready(function () {
+        $('#hasType').DataTable({
+            columns: [
+                { data: 'National ID', searchable: true },
+                { data: 'Type Name', searchable: true},
+            ],
+        });
+    });
+</script>
+
+{% endblock %}

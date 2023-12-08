@@ -1,0 +1,40 @@
+{% extends "pageTemplate.html" %}
+
+{% block content %}
+
+<h1>All Trainers and their Rosters </h1>
+
+<table id="Roster" class="table table-hover">
+    <thead>
+        <th scope="col">Trainer Name</th>
+        <th scope="col">National ID</th>
+        <th scope="col">Game Name</th>
+        
+    </thead>
+    <tbody style="overflow: auto;">
+        {% for ros in Roster%}
+        <tr>
+            <td>{{ros[0]}}</td>
+            <td>{{ros[1]}}</td>
+            <td>{{ros[2]}}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+{% endblock %}
+
+{% block scripts %}
+<script>
+    $(document).ready(function () {
+        $('#Roster').DataTable({
+            columns: [
+                { data: 'Trainer Name', searchable: true },
+                { data: 'National ID', searchable: true},
+                { data: 'Game Name', searchable: true},
+            ],
+        });
+    });
+</script>
+
+{% endblock %}
