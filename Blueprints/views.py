@@ -120,3 +120,19 @@ def types_page():
     curr.execute(all_types)
     result = curr.fetchall()
     return render_template("types.html", Types=result)
+
+@views.route('/hasType')
+def hasType_page():
+    curr = conn.cursor()
+    has_type = 'SELECT * FROM Has_Type'
+    curr.execute(has_type)
+    result = curr.fetchall()
+    return render_template("hasType.html", hasType=result)
+
+@views.route('/roster')
+def roster_page():
+    curr = conn.cursor()
+    roster = 'SELECT * FROM Roster'
+    curr.execute(roster)
+    result = curr.fetchall()
+    return render_template("roster.html", Roster=result)
