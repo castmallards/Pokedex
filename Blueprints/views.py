@@ -79,8 +79,15 @@ def effect_page():
     return render_template("effect.html", Effect=result)
 
 def validate_input(input_str):
-    #malicious_injections = ['SELECT', 'INSERT', '']
-    return True
+    is_valid = True
+
+    malicious_strings = ['INSERT', 'ADD','CREATE', 'DELETE', 'WHERE','DROP','SELECT', 'INSERT', '=', '*', '--', '<', '>']
+
+    for row in malicious_strings:
+        if(row in input_str):
+            is_valid = False
+
+    return is_valid
 
 @views.route('/hasAbility')
 def hasAbility_page():
