@@ -24,37 +24,26 @@ def pokemon_page():
     return render_template("pokemon.html", Pokemon=result)
 
 
-@views.route('/newPkmnIntro', methods=["POST"])
+@views.route('/newPkmnIntro')
 def newPkmnIntro_page():
-    query = ""
-    if request.method == "POST":
-        game = request.form['Games']
-        if game == 'None':
-            query = ""
-        else: # Check for SQL injection 
-            query =  game
-    else:
-        query = ""
     curr = conn.cursor()
     curr.execute('SELECT game_name FROM Games')
     game_list = curr.fetchall()
-
     return render_template('newPkmnIntro.html', Games=game_list)
 
-@views.route('/newPkmnIntro/<game_name>', methods=["GET"])
-def newPkmnInfoResult_page():
-
-    if request.method == "GET":
-        game = request.form['Games']
-
-    games_list = ''
-    types = ''
-    curr = conn.cursor()
-    curr.execute('SELECT ')
-    #types = 'SELECT Has_Type.type_name, count(*) as numIntroduced FROM Has_Type LEFT JOIN Pokemon ON Pokemon.nat_id = Has_Type.nat_id WHERE Pokemon.orig_game = \'{}\' GROUP BY Has_Type.type_name ORDER BY numIntroduced DESC;'.format(query)
+@views.route('/newPkmnIntro/<game_name>')
+def newPkmnInfoResult_page(game_name):
+    #check  = validat_injection(game_name)
+    types = ""
+    if validate_input(game_name):
+        game = game_name
+        curr = conn.cursor()
+        query = 'SELECT Has_Type.type_name, count(*) as numIntroduced FROM Has_Type LEFT JOIN Pokemon ON Pokemon.nat_id = Has_Type.nat_id WHERE Pokemon.orig_game = \'{}\' GROUP BY Has_Type.type_name ORDER BY numIntroduced DESC;'.format(game)
+        curr.execute(query)
+        types = curr.fetchall()
     
 
-    return render_template('newPkmnIntro_result.html', Type=types)
+    return render_template('newPknmIntro_result.html', Type=types)
 
 
 @views.route('/moves')
@@ -95,7 +84,7 @@ def validate_input(input_str):
 @views.route('/hasAbility')
 def hasAbility_page():
     curr = conn.cursor()
-    all_pk_abilities = 'SELECT * FROM hasAbility'
+    all_pk_abilities = 'SELECT * FROM Has_ability'
     curr.execute(all_pk_abilities)
     result = curr.fetchall()
     return render_template("hasAbility.html", hasAbility=result)
