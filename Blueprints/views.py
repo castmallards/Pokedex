@@ -33,7 +33,7 @@ def newPkmnIntro_page():
 
 @views.route('/newPkmnIntro/<game_name>')
 def newPkmnInfoResult_page(game_name):
-    #check  = validat_injection(game_name)
+    
     types = ""
     if validate_input(game_name):
         game = game_name
@@ -155,3 +155,49 @@ def all_abilities_page():
     curr.execute(all_abilities)
     result = curr.fetchall()
     return render_template("allAbilities.html", AllAbilites=result)
+
+@views.route('/typeSearchResult', methods = 'POST')
+def type_search_result_page(game, primary_type, secondary_type, operation):
+    curr = conn.cursor()
+    input_valid = validate_input(game) and validate_input(primary_type) and validate_input(secondary_type) and validate_input(operation)
+    result = []
+    if(input_valid == True and (operation.lower() == 'and' or operation.lower() == 'or')):
+        operation = operation.lower()
+        query_first_part = 'SELECT Pokemon.pok_name, Pokemon.hp, Pokemon.attack, Pokemon.defense FROM Pokemon JOIN Has_Type ON Pokemon.nat_id = Has_Type.nat_id '
+        filter_type = 'WHERE Has_Type.type_name = \'{}\' '
+        filter_game = 'WHERE Pokemon.orig_game = \'{}\' '
+
+        first_query = query_first_part + filter_type.replace(primary_type)
+        second_query = query_first_part
+
+        if(secondary_type.lower() != 'none'):
+            second_query  = second_query + filter_type.replace(second_query)
+        
+        if(game.lower() != 'none'):
+            first_query = first_query + filter_game.replace(game)
+            second_query = second_query + filter_game.replace(game)     
+
+        if(operation == 'and'):
+            full_query = first_query +' INTERSECT ' + second_query
+        
+        if(operation == 'or'):
+            full_query = first_query +' UNION ' + second_query
+    
+        curr.execute(full_query)
+
+        result = curr.fetchall()
+
+    return render_template("typeSearchResult.html", TypeSearchResults=result)
+
+@views.route('/typeSearch')
+def type_search_page():
+    curr = conn.cursor()
+    all_games = 'SELECT game_name FROM Games'
+    all_types = 'SELECT type_name FROM Types'
+
+    game_result = curr.execute(all_games).fetchall()
+    type_result = curr.execute(all_types).fetchall()
+
+    return render_template("typeSearch.html", Games = game_result, Primary = type_result, Secondary = type_result)   
+    
+        
