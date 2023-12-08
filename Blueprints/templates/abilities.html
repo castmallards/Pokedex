@@ -1,0 +1,38 @@
+{% extends "pageTemplate.html" %}
+
+{% block content %}
+
+<h1>List of all abilities</h1>
+
+<table id="Abilities" class="table table-hover">
+    <thead>
+        <th scope="col">Name</th>
+        <th scope="col">Description</th>
+    
+    </thead>
+    <tbody style="overflow: auto;">
+        {% for ab in Abilities%}
+        <tr>
+            <td>{{ab[0]}}</td>
+            <td>{{ab[1]}}</td>
+  
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+{% endblock %}
+
+{% block scripts %}
+<script>
+    $(document).ready(function () {
+        $('#Abilities').DataTable({
+            columns: [
+                { data: 'Name', searchable: true },
+                { data: 'Description', },
+            ],
+        });
+    });
+</script>
+
+{% endblock %}

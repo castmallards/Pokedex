@@ -23,9 +23,6 @@ def pokemon_page():
 
     return render_template("pokemon.html", Pokemon=result)
 
-@views.route('/moves')
-def moves_page():
-    return render_template("moves.html")
 
 @views.route('/newPkmnIntro')
 def newPkmnIntro_page():
@@ -56,3 +53,39 @@ def newPkmnInfoResult_page(game_name):
     print(types)
 
     return render_template('newPknmIntro_result.html', Type=types)
+
+
+@views.route('/moves')
+def moves_page():
+    curr = conn.cursor()
+    all_moves = 'SELECT * FROM Moves'
+    curr.execute(all_moves)
+    result = curr.fetchall()
+    return render_template("moves.html", Moves=result)
+
+@views.route('/abilities')
+def abilities_page():
+    curr = conn.cursor()
+    all_abilities = 'SELECT * FROM Abilities'
+    curr.execute(all_abilities)
+    result = curr.fetchall()
+    return render_template("abilities.html", Abilities=result)
+
+@views.route('/games')
+def games_page():
+    curr = conn.cursor()
+    all_games = 'SELECT * FROM Games'
+    curr.execute(all_games)
+    result = curr.fetchall()
+    return render_template("games.html", Games=result)
+
+@views.route('/effect')
+def effect_page():
+    curr = conn.cursor()
+    all_effects = 'SELECT * FROM Effect'
+    curr.execute(all_effects)
+    result = curr.fetchall()
+    return render_template("effect.html", Effect=result)
+
+def validate_input(input_str):
+    return True

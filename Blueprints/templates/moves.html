@@ -1,0 +1,50 @@
+{% extends "pageTemplate.html" %}
+
+{% block content %}
+
+<h1>Moves list</h1>
+
+<table id="Moves" class="table table-hover">
+    <thead>
+        <th scope="col">Name</th>
+        <th scope="col">Type</th>
+        <th scope="col">Power</th>
+        <th scope="col">Accuracy</th>
+        <th scope="col">PP</th>
+        <th scope="col">Origin Game</th>
+    
+    </thead>
+    <tbody style="overflow: auto;">
+        {% for mov in Moves%}
+        <tr>
+            <td>{{mov[0]}}</td>
+            <td>{{mov[1]}}</td>
+            <td>{{mov[2]}}</td>
+            <td>{{mov[3]}}</td>
+            <td>{{mov[4]}}</td>
+            <td>{{mov[5]}}</td>
+           
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+{% endblock %}
+
+{% block scripts %}
+<script>
+    $(document).ready(function () {
+        $('#Moves').DataTable({
+            columns: [
+                { data: 'Name', searchable: true },
+                { data: 'Type', searchable: true },
+                { data: 'Power' },
+                { data: 'Accuracy' },
+                { data: 'PP' },
+                { data: "Origin Game" },
+            ],
+        });
+    });
+</script>
+
+{% endblock %}

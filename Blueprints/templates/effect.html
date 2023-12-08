@@ -1,0 +1,46 @@
+{% extends "pageTemplate.html" %}
+
+{% block content %}
+
+<h1>Effect Level Matrix</h1>
+<p>Every Type has an effect level on other types.</p>
+<p><i>Legend:</i></p>
+	<p style="text-indent:40px;">2 = Super Effective.</p>
+    <p style="text-indent:40px;">1 = Effective.</p>
+    <p style="text-indent:40px;">0.5 = Not Very Effective.</p>
+    <p style="text-indent:40px;">0 = No Effect.</p>
+
+<table id="Effect" class="table table-hover">
+    <thead>
+        <th scope="col">Affecting Type</th>
+        <th scope="col">Affected Type</th>
+        <th scope="col">Effect Level</th>
+    </thead>
+    <tbody style="overflow: auto;">
+        {% for eff in Effect%}
+        <tr>
+            <td>{{eff[0]}}</td>
+            <td>{{eff[1]}}</td>
+            <td>{{eff[2]}}</td>
+           
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+{% endblock %}
+
+{% block scripts %}
+<script>
+    $(document).ready(function () {
+        $('#Effect').DataTable({
+            columns: [
+                { data: 'Affecting Type', searchable: true },
+                { data: 'Affected Type', },
+                { data: 'Effect Level', },
+            ],
+        });
+    });
+</script>
+
+{% endblock %}
