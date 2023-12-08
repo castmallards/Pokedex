@@ -1,0 +1,44 @@
+{% extends "pageTemplate.html" %}
+
+{% block content %}
+
+
+
+<table id="typeSearchResult" class="table table-hover">
+    <thead>
+        <th scope="col">Pokemon Name</th>
+        <th scope="col">HP</th>
+        <th scope="col">Attack</th>
+        <th scope="col">Defence</th>
+    </thead>
+    <tbody style="overflow: auto;">
+        {% for pok in typeSearchResult%}
+        <tr>
+            <td>{{pok[0]}}</td>
+            <td>{{pok[1]}}</td>
+            <td>{{pok[2]}}</td>
+            <td>{{pok[3]}}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+{% endblock %}
+
+
+{% block scripts %}
+<script>
+    $(document).ready(function () {
+        $('#Pokemon').DataTable({
+            columns: [
+                { data: 'Pokemon Name', searchable: true },
+                { data: 'HP'     },
+                { data: 'Attack' },
+                { data: 'Attack' },
+                { data: 'Defence'}
+            ],
+        });
+    });
+</script>
+
+{% endblock %}
