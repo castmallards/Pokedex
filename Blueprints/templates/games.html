@@ -1,0 +1,35 @@
+{% extends "pageTemplate.html" %}
+
+{% block content %}
+
+<h1>Moves list</h1>
+
+<table id="Games" class="table table-hover">
+    <thead>
+        <th scope="col">Game Name</th>
+        <th scope="col">Release Year</th>    
+    </thead>
+    <tbody style="overflow: auto;">
+        {% for game in Games%}
+        <tr>
+            <td>{{game[0]}}</td>
+            <td>{{game[1]}}</td>          
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+{% endblock %}
+
+{% block scripts %}
+<script>
+    $(document).ready(function () {
+        $('#Games').DataTable({
+            columns: [
+                { data: 'Game Name', searchable: true },
+                { data: 'Release Year', searchable: true },
+            ],
+        });
+    });
+</script>
+{% endblock %}
