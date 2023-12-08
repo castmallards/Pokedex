@@ -9,9 +9,9 @@
         <th scope="col">Name</th>
     </thead>
     <tbody style="overflow: auto;">
-        {% for tr in trainers%}
+        {% for tr in Trainers%}
         <tr>
-            <td>{{ab[0]}}</td>
+            <td>{{tr[0]}}</td>
         </tr>
         {% endfor %}
     </tbody>
@@ -22,7 +22,7 @@
 {% block scripts %}
 <script>
     $(document).ready(function () {
-        $('#trainers').DataTable({
+        $('#Trainers').DataTable({
             columns: [
                 { data: 'Name', searchable: true }
             ],
