@@ -24,35 +24,37 @@ def pokemon_page():
     return render_template("pokemon.html", Pokemon=result)
 
 
-@views.route('/newPkmnIntro')
+@views.route('/newPkmnIntro', methods=["POST"])
 def newPkmnIntro_page():
-    # query = ""
-    # if request.method == "POST":
-    #     game = request.form['Games']
-    #     if game == 'None':
-    #         query = ""
-    #     else: # Check for SQL injection 
-    #         query =  game
-    # else:
-    #     query = ""
+    query = ""
+    if request.method == "POST":
+        game = request.form['Games']
+        if game == 'None':
+            query = ""
+        else: # Check for SQL injection 
+            query =  game
+    else:
+        query = ""
     curr = conn.cursor()
     curr.execute('SELECT game_name FROM Games')
     game_list = curr.fetchall()
+
     return render_template('newPkmnIntro.html', Games=game_list)
 
-@views.route('/newPkmnIntro/<game_name>')
-def newPkmnInfoResult_page(game_name):
+@views.route('/newPkmnIntro/<game_name>', methods=["GET"])
+def newPkmnInfoResult_page():
 
-    #check  = validat_injection(game_name)
-    # if check:
-    game = game_name
+    if request.method == "GET":
+        game = request.form['Games']
+
+    games_list = ''
+    types = ''
     curr = conn.cursor()
-    query = 'SELECT Has_Type.type_name, count(*) as numIntroduced FROM Has_Type LEFT JOIN Pokemon ON Pokemon.nat_id = Has_Type.nat_id WHERE Pokemon.orig_game = \'{}\' GROUP BY Has_Type.type_name ORDER BY numIntroduced DESC;'.format(game)
-    curr.execute(query)
-    types = curr.fetchall()
-    print(types)
+    curr.execute('SELECT ')
+    #types = 'SELECT Has_Type.type_name, count(*) as numIntroduced FROM Has_Type LEFT JOIN Pokemon ON Pokemon.nat_id = Has_Type.nat_id WHERE Pokemon.orig_game = \'{}\' GROUP BY Has_Type.type_name ORDER BY numIntroduced DESC;'.format(query)
+    
 
-    return render_template('newPknmIntro_result.html', Type=types)
+    return render_template('newPkmnIntro_result.html', Type=types)
 
 
 @views.route('/moves')
@@ -89,3 +91,11 @@ def effect_page():
 
 def validate_input(input_str):
     return True
+
+@views.route('/hasAbility')
+def hasAbility_page():
+    curr = conn.cursor()
+    all_pk_abilities = 'SELECT * FROM hasAbility'
+    curr.execute(all_pk_abilities)
+    result = curr.fetchall()
+    return render_template("hasAbility.html", hasAbility=result)
