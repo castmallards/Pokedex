@@ -12,8 +12,8 @@
     <tbody style="overflow: auto;">
         {% for b in Bosses%}
         <tr>
-            <td>{{ab[0]}}</td>
-            <td>{{ab[1]}}</td>
+            <td>{{b[0]}}</td>
+            <td>{{b[1]}}</td>
         </tr>
         {% endfor %}
     </tbody>
@@ -24,7 +24,7 @@
 {% block scripts %}
 <script>
     $(document).ready(function () {
-        $('#bosses').DataTable({
+        $('#Bosses').DataTable({
             columns: [
                 { data: 'Name', searchable: true },
                 { data: 'Game Name', searchable: true }
